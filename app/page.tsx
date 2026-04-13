@@ -1,76 +1,164 @@
 import Link from "next/link";
 const features = [
-  { icon: "🌿", title: "オーガニックカラー導入", desc: "頭皮も髪も健康に。肌に優しいオーガニックカラー剤で施術します。" },
-  { icon: "🚿", title: "オートシャンプー完備", desc: "カラーリングに最適な水流で優しく洗い流します。" },
-  { icon: "💄", title: "国内売上No.1カラー剤", desc: "話題のカラー剤を豊富にご用意。髪質に合わせて調合します。" },
-  { icon: "💳", title: "PayPay・券売機対応", desc: "追加料金なし。安心の明朗会計です。" },
-  { icon: "🪞", title: "カラーチェック", desc: "仕上がりをミラーで確認。しなやかで健康的な髪色をお届け。" },
-  { icon: "💧", title: "オイルトリートメント", desc: "褪色防止効果のあるオイルでドライ。長持ちする美しい色を保ちます。" },
+  { num: "01", title: "オーガニックカラー", desc: "天然由来成分配合。頭皮と髪に優しく、自然な発色を実現します。" },
+  { num: "02", title: "オートシャンプー", desc: "カラーに最適な水流で丁寧に洗い流します。" },
+  { num: "03", title: "国内No.1カラー剤", desc: "髪質に合わせて調合。ダメージを最小限に抑えます。" },
+  { num: "04", title: "PayPay対応", desc: "券売機・PayPay対応。追加料金なしの明朗会計。" },
 ];
 const menu = [
-  { name: "白髪染め（リタッチ）", price: "¥3,300〜" },
-  { name: "白髪染め（全体）", price: "¥5,500〜" },
-  { name: "おしゃれ染め", price: "¥4,400〜" },
-  { name: "トリートメント", price: "¥1,100〜" },
+  { name: "白髪染め リタッチ", price: "¥3,300〜", note: "根元のみ" },
+  { name: "白髪染め 全体", price: "¥5,500〜", note: "毛先まで" },
+  { name: "おしゃれ染め", price: "¥4,400〜", note: "全体カラー" },
+  { name: "トリートメント", price: "¥1,100〜", note: "カラーと同時" },
 ];
 export default function Home() {
   return (
     <>
-      <section style={{ background: "linear-gradient(135deg,#f9f0f2 0%,#fdf8f6 50%,#f5ede8 100%)", padding: "4rem 1rem 3rem" }}>
-        <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontSize: "0.8rem", letterSpacing: "0.2em", color: "#8B5E6B", marginBottom: "1rem" }}>HAIR COLOR SALON — 鶴見駅徒歩4分</p>
-          <h1 style={{ fontFamily: "serif", fontSize: "clamp(1.8rem,5vw,2.8rem)", fontWeight: 600, color: "#3a2428", lineHeight: 1.4, marginBottom: "1.5rem" }}>
-            オシャレな白髪染め専門店<br /><span style={{ color: "#8B5E6B" }}>キレイ鶴見店</span>
+      <section style={{ position:"relative", height:"100svh", minHeight:"600px", overflow:"hidden", background:"#111" }}>
+        <img
+          src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=80&auto=format&fit=crop"
+          alt="ヘアサロン"
+          style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", filter:"grayscale(100%) brightness(0.45)" }}
+        />
+        <div style={{ position:"absolute", inset:0, background:"linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.75) 100%)" }} />
+        <div style={{ position:"relative", zIndex:10, height:"100%", display:"flex", flexDirection:"column", justifyContent:"flex-end", padding:"0 2rem 4rem", maxWidth:"900px", margin:"0 auto" }}>
+          <p style={{ fontSize:"0.7rem", letterSpacing:"0.3em", color:"rgba(255,255,255,0.45)", marginBottom:"1rem" }}>HAIR COLOR SALON — TSURUMI, YOKOHAMA</p>
+          <h1 style={{ fontFamily:"serif", fontSize:"clamp(2.5rem,7vw,5rem)", fontWeight:400, color:"#fff", lineHeight:1.1, marginBottom:"1.5rem", letterSpacing:"0.05em" }}>
+            キレイ鶴見店
           </h1>
-          <p style={{ color: "#7a5a60", fontSize: "1rem", lineHeight: 1.8, marginBottom: "2rem" }}>頭皮と髪を大切に。オーガニックカラーでダメージレスな美しい髪色をご提供します。</p>
-          <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+          <p style={{ fontSize:"clamp(0.85rem,2vw,1rem)", color:"rgba(255,255,255,0.65)", lineHeight:2, marginBottom:"2.5rem", maxWidth:"440px" }}>
+            オーガニックカラーで、頭皮も髪も美しく。<br />
+            白髪染め専門店として、お客様一人ひとりに<br />
+            最適なカラーをご提案します。
+          </p>
+          <div style={{ display:"flex", gap:"1rem", flexWrap:"wrap" }}>
             <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
-              style={{ background: "#8B5E6B", color: "#fff", padding: "14px 32px", borderRadius: "30px", fontSize: "1rem", fontWeight: 700, textDecoration: "none" }}>
-              📅 ネット予約する
+              style={{ background:"#fff", color:"#111", padding:"14px 40px", fontSize:"0.82rem", letterSpacing:"0.15em", textDecoration:"none", fontWeight:700 }}>
+              予　約
             </a>
-            <Link href="/menu" style={{ background: "#fff", color: "#8B5E6B", border: "2px solid #8B5E6B", padding: "14px 32px", borderRadius: "30px", fontSize: "1rem", textDecoration: "none" }}>
-              メニュー・料金を見る
+            <Link href="/menu"
+              style={{ border:"1px solid rgba(255,255,255,0.4)", color:"#fff", padding:"14px 40px", fontSize:"0.82rem", letterSpacing:"0.15em", textDecoration:"none" }}>
+              メニュー
             </Link>
           </div>
         </div>
+        <div style={{ position:"absolute", bottom:"2rem", right:"2rem", zIndex:10, display:"flex", flexDirection:"column", alignItems:"center", gap:"8px" }}>
+          <div style={{ width:"1px", height:"60px", background:"linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.4))" }} />
+          <p style={{ fontSize:"0.55rem", letterSpacing:"0.2em", color:"rgba(255,255,255,0.35)", writingMode:"vertical-rl" }}>SCROLL</p>
+        </div>
       </section>
-      <section style={{ padding: "3rem 1rem" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <h2 style={{ fontFamily: "serif", textAlign: "center", fontSize: "1.6rem", color: "#3a2428", marginBottom: "2rem" }}>キレイ鶴見店の特徴</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: "1rem" }}>
+
+      <section style={{ background:"#f7f5f2", padding:"6rem 2rem" }}>
+        <div style={{ maxWidth:"1000px", margin:"0 auto", display:"grid", gridTemplateColumns:"minmax(0,1fr) minmax(0,1fr)", gap:"5rem", alignItems:"center" }}>
+          <div>
+            <p style={{ fontSize:"0.68rem", letterSpacing:"0.25em", color:"#888", marginBottom:"1.5rem" }}>— CONCEPT</p>
+            <h2 style={{ fontFamily:"serif", fontSize:"clamp(1.6rem,3vw,2.4rem)", color:"#111", lineHeight:1.5, marginBottom:"1.5rem", fontWeight:400 }}>
+              髪と頭皮を大切に。<br />自然の力で美しく。
+            </h2>
+            <p style={{ fontSize:"0.9rem", color:"#555", lineHeight:2.1, marginBottom:"2rem" }}>
+              キレイ鶴見店では、オーガニックカラーを中心に、お客様の髪質や頭皮状態に合わせたカラーリングをご提案しています。化学成分を極力抑えた処方で、ダメージを最小限にしながら美しい発色を実現します。
+            </p>
+            <Link href="/menu" style={{ fontSize:"0.78rem", color:"#111", letterSpacing:"0.12em", borderBottom:"1px solid #111", paddingBottom:"3px", textDecoration:"none" }}>
+              VIEW MENU →
+            </Link>
+          </div>
+          <div style={{ position:"relative" }}>
+            <img
+              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80&auto=format&fit=crop"
+              alt="オーガニックカラー"
+              style={{ width:"100%", aspectRatio:"3/4", objectFit:"cover", filter:"grayscale(100%)" }}
+            />
+            <div style={{ position:"absolute", bottom:"-20px", left:"-20px", width:"55%", aspectRatio:"1", background:"#e5e0d8", zIndex:-1 }} />
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding:"0", overflow:"hidden" }}>
+        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", height:"40vw", maxHeight:"420px" }}>
+          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80&auto=format&fit=crop" alt="オーガニック素材"
+            style={{ width:"100%", height:"100%", objectFit:"cover", filter:"grayscale(100%)" }} />
+          <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80&auto=format&fit=crop" alt="自然素材"
+            style={{ width:"100%", height:"100%", objectFit:"cover", filter:"grayscale(100%)" }} />
+          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=80&auto=format&fit=crop" alt="ヘアサロン"
+            style={{ width:"100%", height:"100%", objectFit:"cover", filter:"grayscale(100%)" }} />
+        </div>
+      </section>
+
+      <section style={{ background:"#111", padding:"6rem 2rem" }}>
+        <div style={{ maxWidth:"1000px", margin:"0 auto" }}>
+          <p style={{ fontSize:"0.68rem", letterSpacing:"0.25em", color:"rgba(255,255,255,0.35)", marginBottom:"1rem", textAlign:"center" }}>— FEATURES</p>
+          <h2 style={{ fontFamily:"serif", fontSize:"clamp(1.4rem,3vw,2rem)", color:"#fff", textAlign:"center", marginBottom:"4rem", fontWeight:400 }}>
+            キレイ鶴見店の特徴
+          </h2>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))", gap:"2.5rem" }}>
             {features.map(f => (
-              <div key={f.title} style={{ background: "#fff", borderRadius: "12px", padding: "1.5rem", border: "1px solid #e8ddd8" }}>
-                <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>{f.icon}</div>
-                <h3 style={{ fontSize: "0.95rem", fontWeight: 700, color: "#5C3A45", marginBottom: "0.5rem" }}>{f.title}</h3>
-                <p style={{ fontSize: "0.85rem", color: "#7a5a60", lineHeight: 1.7 }}>{f.desc}</p>
+              <div key={f.title} style={{ borderTop:"1px solid rgba(255,255,255,0.12)", paddingTop:"1.5rem" }}>
+                <p style={{ fontSize:"0.65rem", letterSpacing:"0.2em", color:"rgba(255,255,255,0.25)", marginBottom:"1rem" }}>{f.num}</p>
+                <h3 style={{ fontSize:"0.95rem", color:"#fff", marginBottom:"0.75rem", fontWeight:500 }}>{f.title}</h3>
+                <p style={{ fontSize:"0.82rem", color:"rgba(255,255,255,0.45)", lineHeight:1.9 }}>{f.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <section style={{ background: "#f9f0f2", padding: "3rem 1rem" }}>
-        <div style={{ maxWidth: "700px", margin: "0 auto" }}>
-          <h2 style={{ fontFamily: "serif", textAlign: "center", fontSize: "1.6rem", color: "#3a2428", marginBottom: "2rem" }}>料金案内</h2>
-          <div style={{ background: "#fff", borderRadius: "12px", overflow: "hidden", border: "1px solid #e8ddd8" }}>
-            {menu.map((m, i) => (
-              <div key={m.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1rem 1.5rem", borderBottom: i < menu.length-1 ? "1px solid #f0e8e4" : "none" }}>
-                <span style={{ fontSize: "0.95rem", color: "#3a2428" }}>{m.name}</span>
-                <span style={{ fontSize: "1rem", fontWeight: 700, color: "#8B5E6B" }}>{m.price}</span>
+
+      <section style={{ background:"#f7f5f2", padding:"6rem 2rem" }}>
+        <div style={{ maxWidth:"680px", margin:"0 auto" }}>
+          <p style={{ fontSize:"0.68rem", letterSpacing:"0.25em", color:"#888", marginBottom:"1rem", textAlign:"center" }}>— MENU & PRICE</p>
+          <h2 style={{ fontFamily:"serif", fontSize:"clamp(1.4rem,3vw,2rem)", color:"#111", textAlign:"center", marginBottom:"3rem", fontWeight:400 }}>
+            料金案内
+          </h2>
+          {menu.map((m, i) => (
+            <div key={m.name} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"1.4rem 0", borderBottom:"1px solid #ddd8d0" }}>
+              <div>
+                <p style={{ fontSize:"0.95rem", color:"#111", fontWeight:500 }}>{m.name}</p>
+                <p style={{ fontSize:"0.75rem", color:"#aaa", marginTop:"3px" }}>{m.note}</p>
               </div>
-            ))}
+              <span style={{ fontSize:"1.1rem", color:"#555", fontWeight:400, fontFamily:"serif" }}>{m.price}</span>
+            </div>
+          ))}
+          <p style={{ fontSize:"0.75rem", color:"#bbb", marginTop:"1.2rem", textAlign:"center" }}>
+            ※ オートシャンプー＋セルフブロー込み。追加料金なし。
+          </p>
+          <div style={{ textAlign:"center", marginTop:"3rem" }}>
+            <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
+              style={{ background:"#111", color:"#fff", padding:"16px 56px", fontSize:"0.82rem", letterSpacing:"0.2em", textDecoration:"none" }}>
+              予　約
+            </a>
           </div>
-          <p style={{ textAlign: "center", fontSize: "0.8rem", color: "#999", marginTop: "1rem" }}>※ オートシャンプー＋セルフブロー込み。追加料金なし。</p>
         </div>
       </section>
-      <section style={{ padding: "3rem 1rem", textAlign: "center" }}>
-        <h2 style={{ fontFamily: "serif", fontSize: "1.6rem", color: "#3a2428", marginBottom: "0.5rem" }}>美容コラム</h2>
-        <p style={{ color: "#7a5a60", fontSize: "0.9rem", marginBottom: "1.5rem" }}>ヘアカラー・白髪染めに関するお役立ち情報をお届けします</p>
-        <Link href="/blog" style={{ background: "#8B5E6B", color: "#fff", padding: "12px 28px", borderRadius: "30px", fontSize: "0.9rem", textDecoration: "none" }}>コラムを読む</Link>
+
+      <section style={{ background:"#fff", padding:"6rem 2rem" }}>
+        <div style={{ maxWidth:"1000px", margin:"0 auto" }}>
+          <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-end", marginBottom:"3rem", flexWrap:"wrap", gap:"1rem" }}>
+            <div>
+              <p style={{ fontSize:"0.68rem", letterSpacing:"0.25em", color:"#888", marginBottom:"0.5rem" }}>— COLUMN</p>
+              <h2 style={{ fontFamily:"serif", fontSize:"clamp(1.4rem,3vw,2rem)", color:"#111", fontWeight:400 }}>美容コラム</h2>
+            </div>
+            <Link href="/blog" style={{ fontSize:"0.75rem", color:"#111", letterSpacing:"0.12em", borderBottom:"1px solid #111", paddingBottom:"2px", textDecoration:"none" }}>
+              VIEW ALL →
+            </Link>
+          </div>
+          <p style={{ color:"#888", fontSize:"0.88rem", lineHeight:1.8 }}>ヘアカラー・白髪染めに関するお役立ち情報をお届けします。</p>
+        </div>
       </section>
-      <section style={{ background: "#3a2428", color: "#fff", padding: "3rem 1rem", textAlign: "center" }}>
-        <h2 style={{ fontFamily: "serif", fontSize: "1.4rem", marginBottom: "1rem" }}>スタッフ募集中</h2>
-        <p style={{ fontSize: "0.9rem", lineHeight: 1.8, color: "#c8b0b8", marginBottom: "1.5rem" }}>週1日・3時間から勤務OK。食事手当＆通勤手当完備。<br />主婦・ダブルワーク・ブランク歓迎。</p>
-        <Link href="/recruit" style={{ border: "1px solid #c8b0b8", color: "#fff", padding: "10px 24px", borderRadius: "20px", fontSize: "0.85rem", textDecoration: "none" }}>採用情報を見る</Link>
+
+      <section style={{ position:"relative", overflow:"hidden" }}>
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1600&q=80&auto=format&fit=crop"
+          alt="スタッフ募集"
+          style={{ width:"100%", height:"400px", objectFit:"cover", filter:"grayscale(100%) brightness(0.35)" }}
+        />
+        <div style={{ position:"absolute", inset:0, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", textAlign:"center" }}>
+          <p style={{ fontSize:"0.68rem", letterSpacing:"0.3em", color:"rgba(255,255,255,0.4)", marginBottom:"1rem" }}>— JOIN US</p>
+          <h2 style={{ fontFamily:"serif", fontSize:"clamp(1.4rem,3vw,2.2rem)", color:"#fff", fontWeight:400, marginBottom:"1rem" }}>スタッフ募集中</h2>
+          <p style={{ fontSize:"0.85rem", color:"rgba(255,255,255,0.6)", lineHeight:2, marginBottom:"2rem" }}>
+            週1日・3時間から。主婦・ダブルワーク・ブランク歓迎。<br />食事手当・通勤手当完備。
+          </p>
+          <Link href="/recruit" style={{ border:"1px solid rgba(255,255,255,0.4)", color:"#fff", padding:"12px 36px", fontSize:"0.78rem", letterSpacing:"0.15em", textDecoration:"none" }}>
+            詳細を見る
+          </Link>
+        </div>
       </section>
     </>
   );
