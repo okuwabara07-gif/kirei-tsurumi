@@ -140,7 +140,22 @@ export default function Home() {
               VIEW ALL →
             </Link>
           </div>
-          <p style={{ color:"#888", fontSize:"0.88rem", lineHeight:1.8 }}>ヘアカラー・白髪染めに関するお役立ち情報をお届けします。</p>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))", gap:"2rem" }}>
+            {[
+              { slug:"shiraganome-age-40", category:"白髪染め", title:"40代からの白髪染め完全ガイド｜ダメージを抑えて美しく染める方法", desc:"40代に増える白髪の悩み。ダメージを抑えながら美しく染めるための方法と、オーガニックカラーのメリットを解説します。", date:"2025.04.10" },
+              { slug:"hair-color-trend-2025", category:"トレンド", title:"2025年最新ヘアカラートレンド｜人気カラーと似合わせのポイント", desc:"2025年のヘアカラートレンドをご紹介。透明感のある色味から、大人の艶カラーまで、自分に似合う色の選び方を解説します。", date:"2025.04.05" },
+              { slug:"color-care-after", category:"ヘアケア", title:"ヘアカラー後のケア方法｜色持ちを良くする7つのポイント", desc:"せっかく染めたヘアカラーを長持ちさせる方法を解説。シャンプーの選び方から日常のケアまでご紹介します。", date:"2025.03.28" },
+            ].map(post => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration:"none" }}>
+                <article style={{ borderTop:"2px solid #111", paddingTop:"1.5rem", cursor:"pointer" }}>
+                  <p style={{ fontSize:"0.68rem", letterSpacing:"0.15em", color:"#888", marginBottom:"0.75rem" }}>{post.category}</p>
+                  <h3 style={{ fontFamily:"serif", fontSize:"1rem", color:"#111", lineHeight:1.6, marginBottom:"0.75rem", fontWeight:400 }}>{post.title}</h3>
+                  <p style={{ fontSize:"0.82rem", color:"#888", lineHeight:1.8, marginBottom:"1rem" }}>{post.desc}</p>
+                  <p style={{ fontSize:"0.72rem", color:"#bbb", letterSpacing:"0.05em" }}>{post.date}</p>
+                </article>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
