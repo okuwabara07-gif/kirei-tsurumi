@@ -75,11 +75,11 @@ export default function Home() {
 
       <section style={{ padding:"0", overflow:"hidden" }}>
         <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", height:"40vw", maxHeight:"420px" }}>
-          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80&auto=format&fit=crop" alt="オーガニック素材"
+          <img src="/images/salon-exterior.jpg" alt="キレイ鶴見店 外観"
             style={{ width:"100%", height:"100%", objectFit:"cover", filter:"grayscale(100%)" }} />
-          <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80&auto=format&fit=crop" alt="自然素材"
+          <img src="/images/salon-mirror.jpg" alt="キレイ鶴見店 店内"
             style={{ width:"100%", height:"100%", objectFit:"cover", filter:"grayscale(100%)" }} />
-          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=80&auto=format&fit=crop" alt="ヘアサロン"
+          <img src="/images/salon-front.jpg" alt="キレイ鶴見店 セット面"
             style={{ width:"100%", height:"100%", objectFit:"cover", filter:"grayscale(100%)" }} />
         </div>
       </section>
@@ -200,8 +200,8 @@ export default function Home() {
         </div>
       </section>
       <section style={{ position:"relative", overflow:"hidden" }}>
-        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1600&q=80&auto=format&fit=crop"
-          alt="スタッフ募集"
+        <img src="/images/salon-chair.jpg"
+          alt="キレイ鶴見店 スタッフ募集"
           style={{ width:"100%", height:"400px", objectFit:"cover", filter:"grayscale(100%) brightness(0.35)" }}
         />
         <div style={{ position:"absolute", inset:0, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", textAlign:"center" }}>

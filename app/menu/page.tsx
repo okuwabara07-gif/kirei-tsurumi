@@ -1,5 +1,26 @@
 import Link from "next/link";
 export default function MenuPage() {
+  const menuDescriptions = [
+    {
+      name: "オーガニックカラー",
+      desc: "植物由来の天然成分を配合したカラー剤を使用。化学成分を極力抑えているため、頭皮への刺激が少なく、敏感肌の方や頭皮トラブルが気になる方にも安心です。染めながら髪にツヤと潤いを与え、自然で柔らかな発色が特徴です。",
+      price: "リタッチ ¥2,500〜",
+      color: "#4a7c59"
+    },
+    {
+      name: "プレミアムカラー",
+      desc: "アミノ酸・アミノペプチド配合で、ダメージを補修しハリコシを改善。ツヤやかに染めあがりながら、頭皮に優しいカラーです。色もちを長続きさせる成分と水分補給・髪質改善成分を組み合わせた、キレイ鶴見店の人気No.1メニューです。",
+      price: "リタッチ ¥3,400〜",
+      color: "#8B5E6B"
+    },
+    {
+      name: "プラチナカラー",
+      desc: "最高位の仕上がりを求める方へ。毛髪強化成分と酸性キューティクルケア成分を配合した特別処方のカラー剤を使用。根元と毛先を塗り分ける高度な技術で、しなやかで艶めく美髪へ導きます。専用シャンプー・トリートメントで仕上げます。",
+      price: "全体 ¥8,900〜",
+      color: "#b8963e"
+    },
+  ];
+
   const menus = [
     { category: "オーガニックカラー", items: [
       { name: "リタッチ（根元から2cm以内）", price: "¥2,500", note: "ハイブリットシャンプー＋セルフブロー込" },
@@ -35,6 +56,21 @@ export default function MenuPage() {
       <h1 style={{ fontFamily:"serif", fontSize:"1.8rem", color:"#111", marginBottom:"0.5rem", fontWeight:400 }}>メニュー・料金</h1>
       <p style={{ color:"#888", fontSize:"0.88rem", marginBottom:"0.75rem" }}>全メニュー税込。ハイブリットシャンプー＋セルフブロー込みの料金です。</p>
       <p style={{ color:"#888", fontSize:"0.82rem", marginBottom:"3rem" }}>※ロング料金あり。現金払い不可メニューあり。</p>
+
+      <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))", gap:"1.5rem", marginBottom:"4rem" }}>
+        {menuDescriptions.map((m, i) => (
+          <div key={m.name} style={{ borderTop:`3px solid ${m.color}`, paddingTop:"1.5rem" }}>
+            <img
+              src={["/images/salon-mirror.jpg","/images/salon-interior.jpg","/images/salon-seat.jpg"][i]}
+              alt={m.name}
+              style={{ width:"100%", height:"200px", objectFit:"cover", filter:"grayscale(100%)", marginBottom:"1rem" }}
+            />
+            <h2 style={{ fontFamily:"serif", fontSize:"1.1rem", color:"#111", marginBottom:"0.75rem", fontWeight:400 }}>{m.name}</h2>
+            <p style={{ fontSize:"0.85rem", color:"#555", lineHeight:2, marginBottom:"1rem" }}>{m.desc}</p>
+            <p style={{ fontSize:"0.9rem", color:m.color, fontWeight:700 }}>{m.price}</p>
+          </div>
+        ))}
+      </div>
       {menus.map(cat => (
         <div key={cat.category} style={{ marginBottom:"3rem" }}>
           <h2 style={{ fontSize:"0.68rem", letterSpacing:"0.2em", color:"#888", borderBottom:"1px solid #ddd", paddingBottom:"0.75rem", marginBottom:"1rem" }}>{cat.category}</h2>

@@ -25,7 +25,7 @@ export default function Footer() {
               {href:"/blog",label:"美容コラム"},
               {href:"/access",label:"アクセス"},
               {href:"/recruit",label:"採用情報"},
-              {href:"/contact",label:"お問い合わせ"},
+              {href:"/contact",label:"お問い合わせ"},{href:"/about",label:"運営者情報"},
             ].map(l => (
               <Link key={l.href} href={l.href}
                 style={{ display:"block", fontSize:"0.82rem", color:"rgba(255,255,255,0.45)", marginBottom:"0.75rem", textDecoration:"none" }}>
