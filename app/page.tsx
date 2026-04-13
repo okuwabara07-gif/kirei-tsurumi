@@ -6,10 +6,10 @@ const features = [
   { num: "04", title: "PayPay対応", desc: "券売機・PayPay対応。追加料金なしの明朗会計。" },
 ];
 const menu = [
-  { name: "白髪染め リタッチ", price: "¥3,300〜", note: "根元のみ" },
-  { name: "白髪染め 全体", price: "¥5,500〜", note: "毛先まで" },
-  { name: "おしゃれ染め", price: "¥4,400〜", note: "全体カラー" },
-  { name: "トリートメント", price: "¥1,100〜", note: "カラーと同時" },
+  { name: "オーガニックカラー リタッチ", price: "¥2,500", note: "根元から2cm以内" },
+  { name: "オーガニックカラー 全体", price: "¥3,040〜", note: "毛先の長さにより変動" },
+  { name: "プレミアムカラー リタッチ", price: "¥4,800", note: "髪質改善ケア配合" },
+  { name: "トリートメント", price: "¥1,200〜", note: "カラーと同時施術" },
 ];
 export default function Home() {
   return (
