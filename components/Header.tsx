@@ -1,0 +1,44 @@
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  const links = [
+    { href: "/menu", label: "メニュー・料金" },
+    { href: "/blog", label: "美容コラム" },
+    { href: "/access", label: "アクセス" },
+    { href: "/recruit", label: "採用情報" },
+    { href: "/contact", label: "お問い合わせ" },
+  ];
+  return (
+    <header style={{ background: "#fff", borderBottom: "1px solid #e8ddd8" }}>
+      <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+        <Link href="/" className="flex flex-col leading-tight">
+          <span style={{ fontFamily: "serif", fontSize: "1.2rem", fontWeight: 600, color: "#8B5E6B" }}>キレイ鶴見店</span>
+          <span style={{ fontSize: "0.65rem", color: "#999", letterSpacing: "0.05em" }}>HAIR COLOR SALON</span>
+        </Link>
+        <nav className="hidden md:flex gap-6">
+          {links.map(l => (
+            <Link key={l.href} href={l.href} style={{ fontSize: "0.85rem", color: "#5C3A45" }} className="hover:opacity-70 transition-opacity">{l.label}</Link>
+          ))}
+        </nav>
+        <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
+          style={{ background: "#8B5E6B", color: "#fff", fontSize: "0.8rem", padding: "8px 16px", borderRadius: "20px" }}
+          className="hidden md:block hover:opacity-80 transition-opacity">ネット予約</a>
+        <button onClick={() => setOpen(!open)} className="md:hidden p-2">
+          {[0,1,2].map(i => <div key={i} style={{ width: 22, height: 2, background: "#8B5E6B", margin: "4px 0" }} />)}
+        </button>
+      </div>
+      {open && (
+        <div style={{ background: "#fff", borderTop: "1px solid #e8ddd8" }} className="md:hidden">
+          {links.map(l => (
+            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
+              style={{ display: "block", padding: "12px 16px", fontSize: "0.9rem", color: "#5C3A45", borderBottom: "1px solid #f0e8e4" }}>{l.label}</Link>
+          ))}
+          <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
+            style={{ display: "block", padding: "14px 16px", fontSize: "0.9rem", color: "#8B5E6B", fontWeight: 700, textAlign: "center" }}>▶ ネット予約はこちら</a>
+        </div>
+      )}
+    </header>
+  );
+}
