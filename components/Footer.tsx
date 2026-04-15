@@ -60,6 +60,10 @@ export default function Footer() {
                 style={{ fontSize:"0.82rem", color:"rgba(255,255,255,0.45)", textDecoration:"none" }}>
                 採用情報（エンゲージ）
               </a>
+              <a href="https://salonrink.com" target="_blank" rel="noopener"
+                style={{ fontSize:"0.82rem", color:"#B8966A", textDecoration:"none", fontWeight:500 }}>
+                SalonRink（サロン向けDXツール）
+              </a>
             </div>
           </div>
         </div>
