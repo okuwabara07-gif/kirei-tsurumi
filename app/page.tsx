@@ -34,7 +34,11 @@ export default function Home() {
           <div style={{ display:"flex", gap:"1rem", flexWrap:"wrap" }}>
             <a href="https://beauty.hotpepper.jp/slnH000501100/" target="_blank" rel="noopener"
               style={{ background:"#fff", color:"#111", padding:"14px 40px", fontSize:"0.82rem", letterSpacing:"0.15em", textDecoration:"none", fontWeight:700 }}>
-              予　約
+              HotPepper予約
+            </a>
+            <a href="https://line.me/R/ti/p/@545fncvi" target="_blank" rel="noopener"
+              style={{ background:"#06C755", color:"#fff", padding:"14px 40px", fontSize:"0.82rem", letterSpacing:"0.15em", textDecoration:"none", fontWeight:700 }}>
+              LINE予約
             </a>
             <Link href="/menu"
               style={{ border:"1px solid rgba(255,255,255,0.4)", color:"#fff", padding:"14px 40px", fontSize:"0.82rem", letterSpacing:"0.15em", textDecoration:"none" }}>
@@ -120,10 +124,14 @@ export default function Home() {
           <p style={{ fontSize:"0.75rem", color:"#bbb", marginTop:"1.2rem", textAlign:"center" }}>
             ※ オートシャンプー＋セルフブロー込み。追加料金なし。
           </p>
-          <div style={{ textAlign:"center", marginTop:"3rem" }}>
+          <div style={{ textAlign:"center", marginTop:"3rem", display:"flex", gap:"1rem", justifyContent:"center", flexWrap:"wrap" }}>
             <a href="https://beauty.hotpepper.jp/slnH000501100/" target="_blank" rel="noopener"
               style={{ background:"#111", color:"#fff", padding:"16px 56px", fontSize:"0.82rem", letterSpacing:"0.2em", textDecoration:"none" }}>
-              予　約
+              HotPepper予約
+            </a>
+            <a href="https://line.me/R/ti/p/@545fncvi" target="_blank" rel="noopener"
+              style={{ background:"#06C755", color:"#fff", padding:"16px 56px", fontSize:"0.82rem", letterSpacing:"0.2em", textDecoration:"none" }}>
+              LINE予約
             </a>
           </div>
         </div>
