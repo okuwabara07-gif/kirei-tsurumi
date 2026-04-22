@@ -32,7 +32,7 @@ export default function Home() {
             最適なカラーをご提案します。
           </p>
           <div style={{ display:"flex", gap:"1rem", flexWrap:"wrap" }}>
-            <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
+            <a href="https://beauty.hotpepper.jp/slnH000501100/" target="_blank" rel="noopener"
               style={{ background:"#fff", color:"#111", padding:"14px 40px", fontSize:"0.82rem", letterSpacing:"0.15em", textDecoration:"none", fontWeight:700 }}>
               予　約
             </a>
@@ -121,7 +121,7 @@ export default function Home() {
             ※ オートシャンプー＋セルフブロー込み。追加料金なし。
           </p>
           <div style={{ textAlign:"center", marginTop:"3rem" }}>
-            <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
+            <a href="https://beauty.hotpepper.jp/slnH000501100/" target="_blank" rel="noopener"
               style={{ background:"#111", color:"#fff", padding:"16px 56px", fontSize:"0.82rem", letterSpacing:"0.2em", textDecoration:"none" }}>
               予　約
             </a>
