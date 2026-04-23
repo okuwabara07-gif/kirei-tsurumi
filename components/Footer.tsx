@@ -36,7 +36,7 @@ export default function Footer() {
           <div>
             <p style={{ fontSize:"0.68rem", letterSpacing:"0.2em", color:"rgba(255,255,255,0.3)", marginBottom:"1rem" }}>INFO</p>
             <p style={{ fontSize:"0.82rem", lineHeight:2.2 }}>
-              神奈川県横浜市鶴見区鶴見中央<br />
+              東京都鶴見中央<br />
               10:00〜18:00<br />
               PayPay・券売機対応
             </p>

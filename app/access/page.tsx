@@ -15,7 +15,7 @@ export default function AccessPage() {
         <table style={{ width:"100%", borderCollapse:"collapse" }}>
           {[
             ["店名","キレイ鶴見店"],
-            ["住所","神奈川県横浜市鶴見区鶴見中央"],
+            ["住所","東京都鶴見中央"],
             ["アクセス","JR鶴見駅東口 徒歩4分"],
             ["営業時間","10:00〜18:00"],
             ["お支払い","PayPay・券売機（現金）"],

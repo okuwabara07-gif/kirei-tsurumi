@@ -181,7 +181,7 @@ export default function Home() {
             title="キレイ鶴見店 地図"
           />
           <p style={{ textAlign:"center", fontSize:"0.82rem", color:"#888", marginTop:"1rem", lineHeight:2 }}>
-            神奈川県横浜市鶴見区鶴見中央 ／ JR鶴見駅東口 徒歩4分
+            東京都鶴見中央 ／ JR鶴見駅東口 徒歩4分
           </p>
         </div>
       </section>
