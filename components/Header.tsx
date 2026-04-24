@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import LineButton from "./LineButton";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const links = [
@@ -22,9 +23,12 @@ export default function Header() {
             <Link key={l.href} href={l.href} style={{ fontSize: "0.85rem", color: "#5C3A45" }} className="hover:opacity-70 transition-opacity">{l.label}</Link>
           ))}
         </nav>
-        <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
-          style={{ background: "#8B5E6B", color: "#fff", fontSize: "0.8rem", padding: "8px 16px", borderRadius: "20px" }}
-          className="hidden md:block hover:opacity-80 transition-opacity">ネット予約</a>
+        <div className="hidden md:flex gap-2">
+          <LineButton variant="small" />
+          <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
+            style={{ background: "#8B5E6B", color: "#fff", fontSize: "0.8rem", padding: "8px 16px", borderRadius: "8px" }}
+            className="hover:opacity-80 transition-opacity">ネット予約</a>
+        </div>
         <button onClick={() => setOpen(!open)} className="md:hidden p-2">
           {[0,1,2].map(i => <div key={i} style={{ width: 22, height: 2, background: "#8B5E6B", margin: "4px 0" }} />)}
         </button>
@@ -35,8 +39,11 @@ export default function Header() {
             <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
               style={{ display: "block", padding: "12px 16px", fontSize: "0.9rem", color: "#5C3A45", borderBottom: "1px solid #f0e8e4" }}>{l.label}</Link>
           ))}
-          <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
-            style={{ display: "block", padding: "14px 16px", fontSize: "0.9rem", color: "#8B5E6B", fontWeight: 700, textAlign: "center" }}>▶ ネット予約はこちら</a>
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "12px 16px", borderTop: "1px solid #f0e8e4" }}>
+            <LineButton variant="small" />
+            <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
+              style={{ background: "#8B5E6B", color: "#fff", padding: "8px 16px", fontSize: "0.9rem", fontWeight: 700, textAlign: "center", borderRadius: "8px", textDecoration: "none" }}>ネット予約</a>
+          </div>
         </div>
       )}
     </header>

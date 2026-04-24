@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LineFloatingButton from "@/components/LineFloatingButton";
 export const metadata: Metadata = {
   title: "キレイ鶴見店 | 白髪染め専門ヘアカラーサロン（鶴見駅徒歩4分）",
   description: "鶴見駅徒歩4分の白髪染め専門店。オーガニックカラー導入、オートシャンプー完備。PayPay対応。",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <LineFloatingButton />
       </body>
     </html>
   );

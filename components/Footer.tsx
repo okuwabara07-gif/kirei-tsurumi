@@ -44,6 +44,10 @@ export default function Footer() {
           <div>
             <p style={{ fontSize:"0.68rem", letterSpacing:"0.2em", color:"rgba(255,255,255,0.3)", marginBottom:"1rem" }}>LINKS</p>
             <div style={{ display:"flex", flexDirection:"column", gap:"0.85rem" }}>
+              <a href="https://line.me/R/ti/p/@545fncvi" target="_blank" rel="noopener noreferrer"
+                style={{ fontSize:"0.82rem", color:"#06C755", textDecoration:"none", fontWeight:500 }}>
+                LINE予約
+              </a>
               <a href="https://beauty.hotpepper.jp/slnH000501100/" target="_blank" rel="noopener"
                 style={{ fontSize:"0.82rem", color:"rgba(255,255,255,0.45)", textDecoration:"none" }}>
                 ネット予約（ホットペッパー）
