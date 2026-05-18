@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LineFloatingButton from "@/components/LineFloatingButton";
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kirei-tsurumi.com"),
   title: "キレイ鶴見店 | 白髪染め専門ヘアカラーサロン（鶴見駅徒歩4分）",
   description: "鶴見駅徒歩4分の白髪染め専門店。オーガニックカラー導入、オートシャンプー完備。PayPay対応。",
 };

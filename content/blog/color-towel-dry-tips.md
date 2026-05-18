@@ -17,7 +17,7 @@ person: "林ともこ・44歳・フリーランス"
 
 ## なぜタオルドライでヘアカラーが色落ちするのか
 
-![ヘアケアイメージ](https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80&auto=format&fit=crop)
+![ヘアケアイメージ](/images/salon-chair.jpg)
 
 「正直、多くのお客様がタオルドライを軽く考えています」と田村さんは話す。
 
@@ -43,7 +43,7 @@ person: "林ともこ・44歳・フリーランス"
 
 ## オーガニックカラーに最適なタオルの選び方
 
-![タオルとヘアケア](https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80&auto=format&fit=crop)
+![タオルとヘアケア](/images/salon-mirror.jpg)
 
 「タオル選びで色持ちが1.5倍変わることもあります」と田村さんは断言する。
 
@@ -87,7 +87,7 @@ person: "林ともこ・44歳・フリーランス"
 
 ## プロが実践する「部位別タオルドライテクニック」
 
-![美しい髪のケア](https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80&auto=format&fit=crop)
+![美しい髪のケア](/images/salon-interior.jpg)
 
 髪の部位によって、最適なタオルドライの方法は異なる。田村さんが美容師として実践している部位別テクニックを教えてもらった。
 
