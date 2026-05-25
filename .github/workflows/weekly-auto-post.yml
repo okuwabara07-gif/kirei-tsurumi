@@ -1,0 +1,66 @@
+name: Weekly Auto Post (JP + EN)
+
+on:
+  schedule:
+    # 火曜朝 9:00 JST = UTC 火曜 0:00
+    - cron: "0 0 * * 2"
+    # 金曜朝 9:00 JST = UTC 金曜 0:00
+    - cron: "0 0 * * 5"
+  workflow_dispatch:
+
+concurrency:
+  group: weekly-auto-post
+  cancel-in-progress: false
+
+jobs:
+  generate-and-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate articles (JP + EN)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set -e
+          node generate-articles.mjs --next
+
+      - name: Configure git
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Commit and push
+        run: |
+          set -e
+          git add content/blog/*.md content/en/blog/*.md
+
+          # 変更がある場合のみ commit & push
+          if ! git diff --staged --quiet; then
+            DATE=$(date +"%Y-%m-%d")
+            git commit -m "feat(blog): auto-generate weekly articles (JP+EN) - $DATE"
+            git push origin main
+            echo "✅ Articles committed and pushed"
+          else
+            echo "ℹ️ No changes to commit"
+          fi
+
+      - name: Post-generation summary
+        run: |
+          echo "✅ ワークフロー完了"
+          echo ""
+          echo "【最新生成ファイル】"
+          find content/blog -name "*.md" -type f | sort | tail -3
+          find content/en/blog -name "*.md" -type f | sort | tail -3
