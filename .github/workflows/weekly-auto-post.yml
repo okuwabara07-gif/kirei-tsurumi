@@ -45,7 +45,7 @@ jobs:
       - name: Commit and push
         run: |
           set -e
-          git add content/blog/*.md content/en/blog/*.md
+          git add content/blog/ content/en/blog/
 
           # 変更がある場合のみ commit & push
           if ! git diff --staged --quiet; then

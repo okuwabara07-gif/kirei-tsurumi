@@ -179,7 +179,7 @@ function findNextUngeneratedArticle() {
     const jpFilePath = path.join(jpOutputDir, `${article.slug}.md`);
     const enFilePath = path.join(enOutputDir, `${article.slug}.md`);
 
-    if (!fs.existsSync(jpFilePath) && !fs.existsSync(enFilePath)) {
+    if (!fs.existsSync(jpFilePath) || !fs.existsSync(enFilePath)) {
       console.log(`✅ 未生成記事を発見: ${article.slug}`);
       return article;
     }
