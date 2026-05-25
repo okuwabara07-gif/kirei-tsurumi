@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# backup and draft files
+*.before-*
+*.proposed
+*.proposed.*
