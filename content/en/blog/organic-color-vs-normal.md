@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "The Difference Between Organic Hair Color and Regular Hair Color: A Professional Stylist's Honest Comparison"
 date: "2026-05-26"
 description: "Based on real client cases from our salon, beauty experts provide detailed guidance on hair coloring solutions tailored to address the specific concerns of women in their 50s and homemakers dealing with gray hair."

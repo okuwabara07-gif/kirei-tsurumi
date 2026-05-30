@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Gray Hair in Your 50s: To Dye or Not to Dye? Exploring the Gray Hair Trend as a New Option"
 date: "2026-05-29"
 description: "Drawing on real client cases from our salon, our experts provide a comprehensive guide to gray hair, addressing the specific concerns and needs of women in their 50s who balance professional careers."

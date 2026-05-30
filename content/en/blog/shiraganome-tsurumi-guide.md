@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "5 Essential Things to Know About Gray Hair Coloring in Tsurumi | Professional Guide to Choosing the Right Salon"
 date: "2026-05-25"
 description: "Based on real client cases from our salon, our experts provide a detailed explanation of hair coloring solutions tailored to address the specific concerns of busy professionals in their 40s dealing with gray hair."
