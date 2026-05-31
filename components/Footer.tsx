@@ -6,7 +6,7 @@ export default function Footer() {
         <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))", gap:"3rem", marginBottom:"3rem" }}>
           <div>
             <p style={{ fontFamily:"serif", fontSize:"1.3rem", color:"#fff", marginBottom:"0.5rem", fontWeight:400 }}>キレイ鶴見店</p>
-            <p style={{ fontSize:"0.75rem", lineHeight:2 }}>白髪染め専門ヘアカラーサロン<br />鶴見駅徒歩4分</p>
+            <p style={{ fontSize:"0.75rem", lineHeight:2 }}>白髪染め専門ヘアカラーサロン<br />鶴見駅徒歩7分</p>
             <div style={{ display:"flex", gap:"10px", marginTop:"1.5rem" }}>
               <a href="https://www.instagram.com/kirei.tsurumi/" target="_blank" rel="noopener"
                 style={{ width:"36px", height:"36px", border:"1px solid rgba(255,255,255,0.2)", display:"flex", alignItems:"center", justifyContent:"center", color:"rgba(255,255,255,0.6)", fontSize:"0.62rem", letterSpacing:"0.03em", textDecoration:"none" }}>
@@ -36,7 +36,7 @@ export default function Footer() {
           <div>
             <p style={{ fontSize:"0.68rem", letterSpacing:"0.2em", color:"rgba(255,255,255,0.3)", marginBottom:"1rem" }}>INFO</p>
             <p style={{ fontSize:"0.82rem", lineHeight:2.2 }}>
-              東京都鶴見中央<br />
+              神奈川県横浜市鶴見区<br />
               10:00〜18:00<br />
               PayPay・券売機対応
             </p>
@@ -73,9 +73,11 @@ export default function Footer() {
         </div>
         <div style={{ borderTop:"1px solid rgba(255,255,255,0.08)", paddingTop:"2rem", display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:"1rem" }}>
           <p style={{ fontSize:"0.72rem", color:"rgba(255,255,255,0.2)" }}>© 2025 キレイ鶴見店 All Rights Reserved.</p>
-          <Link href="/privacy" style={{ fontSize:"0.72rem", color:"rgba(255,255,255,0.2)", textDecoration:"none" }}>
-            プライバシーポリシー
-          </Link>
+          <div style={{ display:"flex", gap:"1.5rem", flexWrap:"wrap" }}>
+            <Link href="/about" style={{ fontSize:"0.72rem", color:"rgba(255,255,255,0.2)", textDecoration:"none" }}>運営者情報</Link>
+            <Link href="/privacy" style={{ fontSize:"0.72rem", color:"rgba(255,255,255,0.2)", textDecoration:"none" }}>プライバシーポリシー</Link>
+            <Link href="/disclaimer" style={{ fontSize:"0.72rem", color:"rgba(255,255,255,0.2)", textDecoration:"none" }}>免責事項</Link>
+          </div>
         </div>
       </div>
     </footer>
