@@ -17,20 +17,21 @@ export default function AboutPage() {
       <div style={{ marginBottom:"3rem" }}>
         <h2 style={{ fontFamily:"serif", fontSize:"1.2rem", color:"#111", marginBottom:"1.5rem", fontWeight:400 }}>サイト運営者について</h2>
         <p style={{ fontSize:"0.9rem", color:"#555", lineHeight:2.2 }}>
-          本サイト「キレイ鶴見店」は、東京都に実店舗を構えるヘアカラー専門サロンが運営する公式サイトです。白髪染めを中心に、オーガニックカラーや髪質改善カラーなど、お客様の髪と頭皮の健康を守りながら美しい髪色を提供することをミッションとしています。
+          本サイト「キレイ鶴見店」は、神奈川県横浜市鶴見区に実店舗を構えるヘアカラー専門サロンの公式サイトです。運営はAOKAE合同会社が行っています。白髪染めを中心に、お客様の髪と頭皮の健康に配慮しながら、一人ひとりに合った髪色を提案することをミッションとしています。
         </p>
         <p style={{ fontSize:"0.9rem", color:"#555", lineHeight:2.2, marginTop:"1rem" }}>
-          当サイトに掲載している美容コラムは、10年以上のキャリアを持つカラーリストが監修しています。ヘアカラーや白髪ケアに関する正確で役立つ情報をお届けすることを目指しています。
+          当サイトに掲載している美容コラムは、実店舗キレイ鶴見店のカラーリストが、日々の施術で得た知見をもとに監修しています。実際の施術例に基づいた、白髪染めとヘアケアの実践的な情報をお届けすることを目指しています。
         </p>
       </div>
 
       <div style={{ borderTop:"1px solid #e8e0d8", paddingTop:"2rem", marginBottom:"3rem" }}>
-        <h2 style={{ fontFamily:"serif", fontSize:"1.2rem", color:"#111", marginBottom:"1.5rem", fontWeight:400 }}>店舗情報</h2>
+        <h2 style={{ fontFamily:"serif", fontSize:"1.2rem", color:"#111", marginBottom:"1.5rem", fontWeight:400 }}>店舗・運営情報</h2>
         <table style={{ width:"100%", borderCollapse:"collapse" }}>
           {[
-            ["店舗名", "オシャレな白髪染め専門店 キレイ鶴見店"],
-            ["住所", "東京都鶴見中央5-10-8"],
-            ["アクセス", "JR鶴見駅東口・京急鶴見駅東口より徒歩4分"],
+            ["店舗名", "白髪染め専門店 キレイ鶴見店"],
+            ["運営会社", "AOKAE合同会社"],
+            ["住所", "神奈川県横浜市鶴見区【正しい番地を記入】"],
+            ["アクセス", "JR鶴見駅・京急鶴見駅より徒歩【分数を記入】分"],
             ["営業時間", "10:00〜18:00（最終受付17:00）"],
             ["定休日", "不定休"],
             ["お支払い", "PayPay・各種クレジットカード対応"],
@@ -46,19 +47,10 @@ export default function AboutPage() {
       </div>
 
       <div style={{ borderTop:"1px solid #e8e0d8", paddingTop:"2rem", marginBottom:"3rem" }}>
-        <h2 style={{ fontFamily:"serif", fontSize:"1.2rem", color:"#111", marginBottom:"1.5rem", fontWeight:400 }}>監修者プロフィール</h2>
-        <div style={{ display:"flex", flexDirection:"column", gap:"1.5rem" }}>
-          {[
-            { name:"田村（シニアカラリスト）", career:"美容師歴15年。オーガニックカラーの専門家として、頭皮と髪の健康を守りながら美しい発色を実現することを使命としています。白髪染めに悩む40〜50代のお客様を中心に、年間1,000件以上の施術実績があります。" },
-            { name:"中島（カラーリスト）", career:"カラー専門歴12年。白髪染めからおしゃれ染めまで幅広く対応。特に40〜50代のお客様の髪の悩みに寄り添ったカラー提案が得意です。" },
-            { name:"山本（チーフカラリスト）", career:"美容師歴18年、カラー専門歴10年。髪質改善カラーのスペシャリストとして、ダメージを最小限に抑えた施術を提供しています。" },
-          ].map(s => (
-            <div key={s.name} style={{ background:"#f7f5f2", padding:"1.5rem", borderLeft:"3px solid #111" }}>
-              <p style={{ fontSize:"0.9rem", fontWeight:700, color:"#111", marginBottom:"0.5rem" }}>キレイ鶴見店 {s.name}</p>
-              <p style={{ fontSize:"0.85rem", color:"#555", lineHeight:1.9 }}>{s.career}</p>
-            </div>
-          ))}
-        </div>
+        <h2 style={{ fontFamily:"serif", fontSize:"1.2rem", color:"#111", marginBottom:"1.5rem", fontWeight:400 }}>監修体制</h2>
+        <p style={{ fontSize:"0.9rem", color:"#555", lineHeight:2.2 }}>
+          当サイトの記事は、実店舗キレイ鶴見店のカラーリストが監修しています。白髪染めを専門とするサロンとして、実際のカウンセリングや施術の現場で得た知見をもとに、正確で役立つ情報の発信を心がけています。掲載している施術例は当店での実例に基づいています（写真はイメージを含みます）。
+        </p>
       </div>
 
       <div style={{ textAlign:"center" }}>
