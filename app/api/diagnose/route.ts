@@ -29,8 +29,29 @@ JSONのみ出力: {"summary":"...","colorDirection":"...","howTo":"...","frequen
     }),
   });
 
+  // 上流エラーをそのまま surfaceする
+  if (!r.ok) {
+    const errData = await r.json();
+    console.error("[diagnose] Anthropic API error:", errData);
+    return NextResponse.json(
+      { error: errData.error?.message || "Anthropic API error" },
+      { status: r.status }
+    );
+  }
+
   const data = await r.json();
-  const text = (data.content || []).map((c: any) => c.text).join("");
+
+  // null guard: content がない場合
+  if (!data.content || !Array.isArray(data.content)) {
+    console.error("[diagnose] No content in response:", data);
+    return NextResponse.json({ error: "no content from API" }, { status: 502 });
+  }
+
+  const text = data.content.map((c: any) => c.text || "").join("");
+
+  if (!text) {
+    return NextResponse.json({ error: "empty response text" }, { status: 502 });
+  }
 
   // JSON 抽出
   let result: any = null;
@@ -39,8 +60,14 @@ JSONのみ出力: {"summary":"...","colorDirection":"...","howTo":"...","frequen
     if (match) {
       result = JSON.parse(match[0]);
     }
-  } catch {
+  } catch (e) {
+    console.error("[diagnose] JSON parse error:", e, "text:", text);
     return NextResponse.json({ error: "parse fail" }, { status: 400 });
+  }
+
+  // null guard: result がない場合
+  if (!result) {
+    return NextResponse.json({ error: "no result" }, { status: 502 });
   }
 
   // 禁止語チェック
