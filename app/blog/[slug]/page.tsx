@@ -58,10 +58,16 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         <p style={{ fontSize:"0.82rem", color:"rgba(255,255,255,0.55)", marginBottom:"1.5rem", lineHeight:1.8 }}>
           鶴見駅東口 徒歩4分｜10:00〜18:00｜PayPay・カード対応
         </p>
-        <a href="https://beauty.hotpepper.jp/slnH000501100/" target="_blank" rel="noopener"
-          style={{ background:"#fff", color:"#111", padding:"12px 40px", fontSize:"0.82rem", letterSpacing:"0.15em", textDecoration:"none", fontWeight:700 }}>
-          予約する
-        </a>
+        <div style={{ display:"flex", gap:"1rem", justifyContent:"center", flexWrap:"wrap" }}>
+          <a href="https://beauty.hotpepper.jp/slnH000501100/" target="_blank" rel="noopener"
+            style={{ background:"#fff", color:"#111", padding:"12px 40px", fontSize:"0.82rem", letterSpacing:"0.15em", textDecoration:"none", fontWeight:700 }}>
+            予約する
+          </a>
+          <Link href="/diagnosis"
+            style={{ display:"inline-block", background:"#8a9a85", color:"#fff", padding:"12px 40px", fontSize:"0.82rem", letterSpacing:"0.15em", textDecoration:"none", fontWeight:700, margin:"10px 8px 0" }}>
+            無料・白髪ケア診断
+          </Link>
+        </div>
       </div>
 
       {related.length > 0 && (
