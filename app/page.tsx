@@ -44,6 +44,10 @@ export default function Home() {
               style={{ border:"1px solid rgba(255,255,255,0.4)", color:"#fff", padding:"14px 40px", fontSize:"0.82rem", letterSpacing:"0.15em", textDecoration:"none" }}>
               メニュー
             </Link>
+            <Link href="/diagnosis"
+              style={{ display:"inline-block", background:"#8a9a85", color:"#fff", padding:"12px 40px", fontSize:"0.82rem", letterSpacing:"0.15em", textDecoration:"none", fontWeight:700, margin:"10px 8px 0" }}>
+              無料・白髪ケア診断
+            </Link>
           </div>
         </div>
         <div style={{ position:"absolute", bottom:"2rem", right:"2rem", zIndex:10, display:"flex", flexDirection:"column", alignItems:"center", gap:"8px" }}>
