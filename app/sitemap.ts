@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
+import { getAllArticles } from '@/lib/articles'
 
 const baseUrl = 'https://kirei-tsurumi.com'
 
@@ -8,6 +9,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogUrls = posts.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  const articles = await getAllArticles()
+  const dbBlogUrls = articles.map(article => ({
+    url: `${baseUrl}/blog/db/${article.slug}`,
+    lastModified: new Date(article.published_at),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
@@ -38,6 +47,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     ...blogUrls,
+    ...dbBlogUrls,
     {
       url: `${baseUrl}/products`,
       lastModified: new Date(),
