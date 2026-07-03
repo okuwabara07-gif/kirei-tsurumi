@@ -1,30 +1,60 @@
-import type { MetadataRoute } from 'next';
-import { getAllPosts } from '@/lib/blog';
+import type { MetadataRoute } from 'next'
+import { getAllPosts } from '@/lib/blog'
 
-const SITE = 'https://kirei-tsurumi.com';
+const baseUrl = 'https://kirei-tsurumi.com'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages = [
-    '', '/menu', '/blog', '/access', '/about',
-    '/recruit', '/contact', '/privacy',
-  ].map((path) => ({
-    url: `${SITE}${path}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: path === '' ? 1 : 0.7,
-  }));
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = getAllPosts()
+  const blogUrls = posts.map(post => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
 
-  let postPages: MetadataRoute.Sitemap = [];
-  try {
-    postPages = getAllPosts().map((p) => ({
-      url: `${SITE}/blog/${p.slug}`,
-      lastModified: p.date ? new Date(p.date) : new Date(),
-      changeFrequency: 'monthly' as const,
+  return [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/access`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    ...blogUrls,
+    {
+      url: `${baseUrl}/products`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/diagnosis`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
       priority: 0.6,
-    }));
-  } catch (e) {
-    postPages = [];
-  }
-
-  return [...staticPages, ...postPages];
+    },
+  ]
 }
