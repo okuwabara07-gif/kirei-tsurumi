@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 import { getAllArticles } from "@/lib/articles";
 
 export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "美容コラム | キレイ鶴見店",
+  description: "ヘアカラー・白髪染めに関するお役立ち情報をお届け。",
+  alternates: { canonical: "https://kirei-tsurumi.com/blog" },
+};
 
 interface ListItem {
   type: 'post' | 'article'

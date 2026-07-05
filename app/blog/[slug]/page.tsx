@@ -11,7 +11,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
-  return { title: `${post.title} | キレイ鶴見店`, description: post.description };
+  return {
+    title: `${post.title} | キレイ鶴見店`,
+    description: post.description,
+    alternates: { canonical: `https://kirei-tsurumi.com/blog/${slug}` },
+  };
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {

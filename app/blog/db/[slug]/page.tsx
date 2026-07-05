@@ -34,6 +34,7 @@ export async function generateMetadata({
   return {
     title: article.title,
     description: article.excerpt,
+    alternates: { canonical: `https://kirei-tsurumi.com/blog/db/${slug}` },
     openGraph: {
       title: article.title,
       description: article.excerpt,
