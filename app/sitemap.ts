@@ -41,7 +41,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticUrls = staticPages.map(page => ({
     url: page.url,
     lastModified: new Date(),
-    changeFrequency: page.changeFreq as const,
+    changeFrequency: page.changeFreq as MetadataRoute.Sitemap[number]['changeFrequency'],
     priority: page.priority,
   }))
 
