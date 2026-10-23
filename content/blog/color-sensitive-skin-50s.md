@@ -37,7 +37,7 @@ person: "50代女性のお客様（鶴見区在住）"
 ![頭皮の乾燥や赤みがないか、やさしくチェックします。](/images/blog/color-sensitive-skin-50s/03-check.jpg)
 *③頭皮の状態確認*
 
-![低刺激の薬剤を使用し、頭皮に優しく塗布していきます。](/images/blog/color-sensitive-skin-50s/04-color.jpg)
+![頭皮への負担に配慮した薬剤を使用し、やさしく塗布していきます。](/images/blog/color-sensitive-skin-50s/04-color.jpg)
 *④カラー施術*
 
 ![白髪が自然になじみ、安心して過ごせる仕上がりになりました。](/images/blog/color-sensitive-skin-50s/05-side.jpg)

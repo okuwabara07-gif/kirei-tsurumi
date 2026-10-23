@@ -1,4 +1,8 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
+import { SALON } from "@/lib/salon";
+
+export const metadata = pageMeta("/recruit", "美容師求人｜鶴見駅徒歩4分の白髪染め専門店 キレイ鶴見店（週1日・3時間〜）", "横浜市鶴見区・鶴見駅徒歩4分の白髪染め専門店キレイ鶴見店のスタッフ募集。週1日・3時間からOK、主婦・ダブルワーク・ブランク歓迎。食事手当・通勤手当あり。");
 export default function RecruitPage() {
   return (
     <div style={{ maxWidth:"800px", margin:"0 auto", padding:"3rem 1rem" }}>
@@ -22,9 +26,12 @@ export default function RecruitPage() {
       </div>
       <div style={{ background:"#3a2428", color:"#fff", borderRadius:"12px", padding:"2rem", textAlign:"center" }}>
         <h3 style={{ fontFamily:"serif", fontSize:"1.1rem", marginBottom:"1rem" }}>応募・お問い合わせ</h3>
-        <Link href="/contact" style={{ border:"1px solid #c8b0b8", color:"#fff", padding:"10px 24px", borderRadius:"20px", fontSize:"0.85rem", textDecoration:"none" }}>
-          お問い合わせフォームへ
-        </Link>
+        <a href={SALON.recruit} target="_blank" rel="noopener" style={{ border:"1px solid #c8b0b8", color:"#fff", padding:"10px 24px", borderRadius:"20px", fontSize:"0.85rem", textDecoration:"none" }}>
+          採用ページ（エンゲージ）で応募する
+        </a>
+        <p style={{ fontSize:"0.8rem", color:"rgba(255,255,255,0.6)", marginTop:"1rem" }}>
+          ご質問は<Link href="/contact" style={{ color:"#fff" }}>お問い合わせ</Link>からどうぞ。勤務地：{SALON.address}（{SALON.accessShort}）
+        </p>
       </div>
     </div>
   );

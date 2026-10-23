@@ -1,8 +1,17 @@
 import Link from "next/link";
+import { getAllPosts } from "@/lib/blog";
+import { pageMeta } from "@/lib/seo";
+import { SALON } from "@/lib/salon";
+
+export const metadata = pageMeta(
+  "/",
+  "キレイ鶴見店｜鶴見駅徒歩4分の白髪染め専門ヘアカラーサロン（横浜市鶴見区）",
+  "横浜市鶴見区・JR鶴見駅東口から徒歩4分の白髪染め専門店。オーガニックカラーのリタッチ¥2,500〜、全体染め¥3,040〜。オートシャンプー完備、PayPay対応。ホットペッパー・LINEで予約できます。"
+);
 const features = [
-  { num: "01", title: "オーガニックカラー", desc: "天然由来成分配合。頭皮と髪に優しく、自然な発色を実現します。" },
+  { num: "01", title: "オーガニックカラー", desc: "天然由来成分を配合。頭皮と髪へのやさしさに配慮しながら、自然な発色に仕上げます。" },
   { num: "02", title: "オートシャンプー", desc: "カラーに最適な水流で丁寧に洗い流します。" },
-  { num: "03", title: "国内No.1カラー剤", desc: "髪質に合わせて調合。ダメージを最小限に抑えます。" },
+  { num: "03", title: "プロ用カラー剤", desc: "サロン専用のカラー剤を、髪質や白髪の量に合わせて調合します。" },
   { num: "04", title: "PayPay対応", desc: "券売機・PayPay対応。追加料金なしの明朗会計。" },
 ];
 const menu = [
@@ -12,6 +21,7 @@ const menu = [
   { name: "トリートメント", price: "¥1,200〜", note: "カラーと同時施術" },
 ];
 export default function Home() {
+  const latest = getAllPosts().slice(0, 3);
   return (
     <>
       <section style={{ position:"relative", height:"100svh", minHeight:"600px", overflow:"hidden", background:"#111" }}>
@@ -64,7 +74,7 @@ export default function Home() {
               髪と頭皮を大切に。<br />自然の力で美しく。
             </h2>
             <p style={{ fontSize:"0.9rem", color:"#555", lineHeight:2.1, marginBottom:"2rem" }}>
-              キレイ鶴見店では、オーガニックカラーを中心に、お客様の髪質や頭皮状態に合わせたカラーリングをご提案しています。化学成分を極力抑えた処方で、ダメージを最小限にしながら美しい発色を実現します。
+              キレイ鶴見店では、オーガニックカラーを中心に、お客様の髪質や頭皮状態に合わせたカラーリングをご提案しています。頭皮と髪へのやさしさに配慮した処方で、自然で美しい発色をめざします。
             </p>
             <Link href="/menu" style={{ fontSize:"0.78rem", color:"#111", letterSpacing:"0.12em", borderBottom:"1px solid #111", paddingBottom:"3px", textDecoration:"none" }}>
               VIEW MENU →
@@ -153,16 +163,12 @@ export default function Home() {
             </Link>
           </div>
           <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))", gap:"2rem" }}>
-            {[
-              { slug:"shiraganome-age-40", category:"白髪染め", title:"40代からの白髪染め完全ガイド｜ダメージを抑えて美しく染める方法", desc:"40代に増える白髪の悩み。ダメージを抑えながら美しく染めるための方法と、オーガニックカラーのメリットを解説します。", date:"2025.04.10" },
-              { slug:"hair-color-trend-2025", category:"トレンド", title:"2025年最新ヘアカラートレンド｜人気カラーと似合わせのポイント", desc:"2025年のヘアカラートレンドをご紹介。透明感のある色味から、大人の艶カラーまで、自分に似合う色の選び方を解説します。", date:"2025.04.05" },
-              { slug:"color-care-after", category:"ヘアケア", title:"ヘアカラー後のケア方法｜色持ちを良くする7つのポイント", desc:"せっかく染めたヘアカラーを長持ちさせる方法を解説。シャンプーの選び方から日常のケアまでご紹介します。", date:"2025.03.28" },
-            ].map(post => (
+            {latest.map(post => (
               <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration:"none" }}>
                 <article style={{ borderTop:"2px solid #111", paddingTop:"1.5rem", cursor:"pointer" }}>
                   <p style={{ fontSize:"0.68rem", letterSpacing:"0.15em", color:"#888", marginBottom:"0.75rem" }}>{post.category}</p>
                   <h3 style={{ fontFamily:"serif", fontSize:"1rem", color:"#111", lineHeight:1.6, marginBottom:"0.75rem", fontWeight:400 }}>{post.title}</h3>
-                  <p style={{ fontSize:"0.82rem", color:"#888", lineHeight:1.8, marginBottom:"1rem" }}>{post.desc}</p>
+                  <p style={{ fontSize:"0.82rem", color:"#888", lineHeight:1.8, marginBottom:"1rem" }}>{post.description}</p>
                   <p style={{ fontSize:"0.72rem", color:"#bbb", letterSpacing:"0.05em" }}>{post.date}</p>
                 </article>
               </Link>
@@ -177,7 +183,7 @@ export default function Home() {
           <p style={{ fontSize:"0.68rem", letterSpacing:"0.25em", color:"#888", marginBottom:"1rem", textAlign:"center" }}>— ACCESS</p>
           <h2 style={{ fontFamily:"serif", fontSize:"clamp(1.4rem,3vw,2rem)", color:"#111", textAlign:"center", marginBottom:"3rem", fontWeight:400 }}>アクセス</h2>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3248.5!2d139.679!3d35.510!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185de7093c0001%3A0x5e18e0e5f2e2a44c!2z44Kt44Os44A45bCB5a2m5bqX!5e0!3m2!1sja!2sjp!4v1234567890"
+            src={SALON.mapEmbed}
             width="100%" height="400"
             style={{ border:0, filter:"grayscale(100%)" }}
             allowFullScreen loading="lazy"
@@ -185,7 +191,8 @@ export default function Home() {
             title="キレイ鶴見店 地図"
           />
           <p style={{ textAlign:"center", fontSize:"0.82rem", color:"#888", marginTop:"1rem", lineHeight:2 }}>
-            東京都鶴見中央 ／ JR鶴見駅東口 徒歩4分
+            {SALON.address} ／ {SALON.access}<br />
+            営業時間 {SALON.hours}・{SALON.holiday}　<Link href="/access" style={{ color:"#111" }}>アクセス詳細 →</Link>
           </p>
         </div>
       </section>

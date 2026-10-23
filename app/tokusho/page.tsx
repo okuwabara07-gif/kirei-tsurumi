@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "特定商取引法に基づく表記 | キレイ鶴見店",
   description: "キレイ鶴見店（AOKAE合同会社運営）の特定商取引法に基づく表記ページ。",
+  alternates: { canonical: "https://kirei-tsurumi.com/tokusho" },
 };
 
 const rows: [string, string][] = [

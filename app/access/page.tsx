@@ -1,31 +1,60 @@
+import Link from "next/link";
+import { pageMeta, breadcrumbJsonLd } from "@/lib/seo";
+import { SALON } from "@/lib/salon";
+import JsonLd from "@/components/JsonLd";
+
+export const metadata = pageMeta(
+  "/access",
+  "アクセス・営業時間｜鶴見駅徒歩4分 キレイ鶴見店（横浜市鶴見区鶴見中央）",
+  `キレイ鶴見店へのアクセス。${SALON.address}。${SALON.access}。営業時間${SALON.hours}、${SALON.holiday}。`
+);
+
 export default function AccessPage() {
+  const rows: [string, string][] = [
+    ["店名", SALON.fullName],
+    ["住所", `〒${SALON.postalCode} ${SALON.address}`],
+    ["アクセス", SALON.access],
+    ["営業時間", SALON.hours],
+    ["定休日", SALON.holiday],
+    ["お支払い", SALON.payment],
+    ["ご予約", "ホットペッパービューティー・LINE"],
+  ];
   return (
     <div style={{ maxWidth:"800px", margin:"0 auto", padding:"3rem 1rem" }}>
-      <h1 style={{ fontFamily:"serif", fontSize:"1.8rem", color:"#3a2428", marginBottom:"0.5rem" }}>アクセス</h1>
-      <p style={{ color:"#7a5a60", marginBottom:"2rem", fontSize:"0.9rem" }}>JR鶴見駅東口より徒歩4分</p>
+      <JsonLd data={breadcrumbJsonLd([{ name:"ホーム", path:"/" }, { name:"アクセス", path:"/access" }])} />
+      <h1 style={{ fontFamily:"serif", fontSize:"1.8rem", color:"#3a2428", marginBottom:"0.5rem" }}>アクセス・営業時間</h1>
+      <p style={{ color:"#7a5a60", marginBottom:"2rem", fontSize:"0.9rem" }}>{SALON.access}（横浜市鶴見区鶴見中央）</p>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3248.9!2d139.6785!3d35.5087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185de7093c0001%3A0x5e18e0e5f2e2a44c!2z44Kt44Os44A45bCB5a2m5bqX!5e0!3m2!1sja!2sjp!4v1234567890"
+        src={SALON.mapEmbed}
         width="100%" height="350"
-        style={{ border:0, borderRadius:"12px", marginBottom:"2rem" }}
+        style={{ border:0, borderRadius:"12px", marginBottom:"1rem" }}
         allowFullScreen loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         title="キレイ鶴見店 地図"
       />
-      <div style={{ background:"#fff", borderRadius:"12px", padding:"1.5rem 2rem", border:"1px solid #e8ddd8" }}>
+      <p style={{ textAlign:"right", fontSize:"0.8rem", marginBottom:"2rem" }}>
+        <a href={SALON.mapLink} target="_blank" rel="noopener" style={{ color:"#8B5E6B" }}>Googleマップで開く →</a>
+      </p>
+      <div style={{ background:"#fff", borderRadius:"12px", padding:"1.5rem 2rem", border:"1px solid #e8ddd8", marginBottom:"2rem" }}>
         <table style={{ width:"100%", borderCollapse:"collapse" }}>
-          {[
-            ["店名","キレイ鶴見店"],
-            ["住所","東京都鶴見中央"],
-            ["アクセス","JR鶴見駅東口 徒歩4分"],
-            ["営業時間","10:00〜18:00"],
-            ["お支払い","PayPay・券売機（現金）"],
-          ].map(([l,v]) => (
-            <tr key={l} style={{ borderBottom:"1px solid #f0e8e4" }}>
-              <td style={{ padding:"12px 0", fontSize:"0.85rem", color:"#999", width:"120px" }}>{l}</td>
-              <td style={{ padding:"12px 0", fontSize:"0.9rem", color:"#3a2428" }}>{v}</td>
-            </tr>
-          ))}
+          <tbody>
+            {rows.map(([l,v]) => (
+              <tr key={l} style={{ borderBottom:"1px solid #f0e8e4" }}>
+                <th style={{ padding:"12px 0", fontSize:"0.85rem", color:"#999", width:"120px", textAlign:"left", fontWeight:400 }}>{l}</th>
+                <td style={{ padding:"12px 0", fontSize:"0.9rem", color:"#3a2428" }}>{v}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
+      </div>
+      <h2 style={{ fontFamily:"serif", fontSize:"1.2rem", color:"#3a2428", marginBottom:"1rem" }}>鶴見駅からの道順</h2>
+      <p style={{ fontSize:"0.9rem", color:"#555", lineHeight:2, marginBottom:"2rem" }}>
+        JR鶴見駅の東口、京急鶴見駅から徒歩4分ほどです。道に迷われた際は、上の「Googleマップで開く」から経路をご確認ください。
+      </p>
+      <div style={{ display:"flex", gap:"1rem", flexWrap:"wrap", justifyContent:"center" }}>
+        <a href={SALON.hotpepper} target="_blank" rel="noopener" style={{ background:"#111", color:"#fff", padding:"14px 36px", fontSize:"0.85rem", textDecoration:"none" }}>ホットペッパーで予約</a>
+        <a href={SALON.line} target="_blank" rel="noopener" style={{ background:"#06C755", color:"#fff", padding:"14px 36px", fontSize:"0.85rem", textDecoration:"none" }}>LINEで予約・相談</a>
+        <Link href="/menu" style={{ border:"1px solid #111", color:"#111", padding:"14px 36px", fontSize:"0.85rem", textDecoration:"none" }}>メニュー・料金</Link>
       </div>
     </div>
   );

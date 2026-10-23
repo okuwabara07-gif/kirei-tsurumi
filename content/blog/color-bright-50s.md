@@ -37,7 +37,7 @@ person: "50代女性のお客様（鶴見区在住）"
 ![分け目や顔周りの白髪の量や生え方を丁寧にチェックします。](/images/blog/color-bright-50s/03-check.jpg)
 *③白髪の状態確認*
 
-![明るさを残すため、根元を中心に低刺激のカラー剤を塗布します。](/images/blog/color-bright-50s/04-color.jpg)
+![明るさを残すため、根元を中心に頭皮への負担に配慮したカラー剤を塗布します。](/images/blog/color-bright-50s/04-color.jpg)
 *④カラー施術*
 
 ![白髪が自然にカバーされ、柔らかいブラウンベージュで明るい印象に。](/images/blog/color-bright-50s/05-side.jpg)

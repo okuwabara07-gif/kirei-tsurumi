@@ -1,4 +1,8 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
+import { SALON } from "@/lib/salon";
+
+export const metadata = pageMeta("/about", "運営者情報｜キレイ鶴見店（AOKAE合同会社）", "白髪染め専門店キレイ鶴見店の運営者情報。横浜市鶴見区鶴見中央の実店舗と、コラムの監修体制についてご紹介します。");
 export default function AboutPage() {
   return (
     <div style={{ maxWidth:"720px", margin:"0 auto", padding:"3rem 1rem" }}>
@@ -30,11 +34,11 @@ export default function AboutPage() {
           {[
             ["店舗名", "白髪染め専門店 キレイ鶴見店"],
             ["運営会社", "AOKAE合同会社"],
-            ["住所", "神奈川県横浜市鶴見区【正しい番地を記入】"],
-            ["アクセス", "JR鶴見駅・京急鶴見駅より徒歩【分数を記入】分"],
-            ["営業時間", "10:00〜18:00（最終受付17:00）"],
-            ["定休日", "不定休"],
-            ["お支払い", "PayPay・各種クレジットカード対応"],
+            ["住所", `〒${SALON.postalCode} ${SALON.address}`],
+            ["アクセス", SALON.access],
+            ["営業時間", SALON.hours],
+            ["定休日", SALON.holiday],
+            ["お支払い", SALON.payment],
             ["Instagram", "@kirei.tsurumi"],
             ["X", "@kirei_tsurumi"],
           ].map(([l,v]) => (

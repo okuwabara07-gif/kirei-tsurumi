@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import LineButton from "./LineButton";
+import { SALON } from "@/lib/salon";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const links = [
@@ -25,7 +26,7 @@ export default function Header() {
         </nav>
         <div className="hidden md:flex gap-2">
           <LineButton variant="small" />
-          <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
+          <a href={SALON.hotpepper} target="_blank" rel="noopener"
             style={{ background: "#8B5E6B", color: "#fff", fontSize: "0.8rem", padding: "8px 16px", borderRadius: "8px" }}
             className="hover:opacity-80 transition-opacity">ネット予約</a>
         </div>
@@ -41,7 +42,7 @@ export default function Header() {
           ))}
           <div style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "12px 16px", borderTop: "1px solid #f0e8e4" }}>
             <LineButton variant="small" />
-            <a href="https://beauty.hotpepper.jp" target="_blank" rel="noopener"
+            <a href={SALON.hotpepper} target="_blank" rel="noopener"
               style={{ background: "#8B5E6B", color: "#fff", padding: "8px 16px", fontSize: "0.9rem", fontWeight: 700, textAlign: "center", borderRadius: "8px", textDecoration: "none" }}>ネット予約</a>
           </div>
         </div>

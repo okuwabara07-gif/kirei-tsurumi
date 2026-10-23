@@ -1,3 +1,7 @@
+import { pageMeta } from "@/lib/seo";
+
+export const metadata = pageMeta("/disclaimer", "免責事項｜キレイ鶴見店", "キレイ鶴見店のウェブサイトに関する免責事項。");
+
 export default function DisclaimerPage() {
   const h2 = { fontFamily:"serif" as const, fontSize:"1.2rem", color:"#111", margin:"2rem 0 1rem", fontWeight:400 };
   const p = { fontSize:"0.9rem", color:"#555", lineHeight:2.0, marginBottom:"1rem" };

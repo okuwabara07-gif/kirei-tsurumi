@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
+
+export const metadata = pageMeta("/privacy", "プライバシーポリシー｜キレイ鶴見店", "キレイ鶴見店（AOKAE合同会社）の個人情報の取り扱いについて。");
 export default function PrivacyPage() {
   const h2 = { fontFamily:"serif" as const, fontSize:"1.2rem", color:"#111", margin:"2rem 0 1rem", fontWeight:400 };
   const p = { fontSize:"0.9rem", color:"#555", lineHeight:2.0, marginBottom:"1rem" };

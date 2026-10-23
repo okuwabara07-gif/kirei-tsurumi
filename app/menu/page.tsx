@@ -1,21 +1,30 @@
 import Link from "next/link";
+import { pageMeta, breadcrumbJsonLd } from "@/lib/seo";
+import { SALON } from "@/lib/salon";
+import JsonLd from "@/components/JsonLd";
+
+export const metadata = pageMeta(
+  "/menu",
+  "メニュー・料金｜白髪染めリタッチ¥2,500〜 キレイ鶴見店（鶴見駅徒歩4分）",
+  "キレイ鶴見店の白髪染めメニューと料金。オーガニックカラーのリタッチ¥2,500、全体染め¥3,040〜、プレミアムカラー、プラチナカラー、トリートメント。全メニュー税込・シャンプー＋セルフブロー込み。"
+);
 export default function MenuPage() {
   const menuDescriptions = [
     {
       name: "オーガニックカラー",
-      desc: "植物由来の天然成分を配合したカラー剤を使用。化学成分を極力抑えているため、頭皮への刺激が少なく、敏感肌の方や頭皮トラブルが気になる方にも安心です。染めながら髪にツヤと潤いを与え、自然で柔らかな発色が特徴です。",
+      desc: "植物由来の天然成分を配合したカラー剤を使用。頭皮と髪へのやさしさに配慮した処方で、自然で柔らかな発色が特徴です。染めながら髪にツヤを与えます。頭皮が敏感な方は、ご予約時にご相談ください（パッチテストのご案内をしています）。",
       price: "リタッチ ¥2,500〜",
       color: "#4a7c59"
     },
     {
       name: "プレミアムカラー",
-      desc: "アミノ酸・アミノペプチド配合で、ダメージを補修しハリコシを改善。ツヤやかに染めあがりながら、頭皮に優しいカラーです。色もちを長続きさせる成分と水分補給・髪質改善成分を組み合わせた、キレイ鶴見店の人気No.1メニューです。",
-      price: "リタッチ ¥3,400〜",
+      desc: "アミノ酸・アミノペプチド配合で、髪に潤いを与え、ハリ・コシのある手触りに整えます。ツヤやかな染め上がりと、色持ちに配慮したケア成分を組み合わせた、キレイ鶴見店で人気のメニューです。",
+      price: "リタッチ ¥4,800〜",
       color: "#8B5E6B"
     },
     {
       name: "プラチナカラー",
-      desc: "最高位の仕上がりを求める方へ。毛髪強化成分と酸性キューティクルケア成分を配合した特別処方のカラー剤を使用。根元と毛先を塗り分ける高度な技術で、しなやかで艶めく美髪へ導きます。専用シャンプー・トリートメントで仕上げます。",
+      desc: "仕上がりにこだわりたい方へ。毛髪を補強するケア成分と酸性キューティクルケア成分を配合したカラー剤を使用。根元と毛先を塗り分けて、しなやかでツヤのある髪に仕上げます。専用シャンプー・トリートメントで仕上げます。",
       price: "全体 ¥8,900〜",
       color: "#b8963e"
     },
@@ -35,14 +44,14 @@ export default function MenuPage() {
       { name: "全体 毛先15cmまで", price: "¥5,900", note: "ハイブリットシャンプー＋セルフブロー込" },
       { name: "全体 毛先15cm〜", price: "¥6,900", note: "ハイブリットシャンプー＋セルフブロー込" },
     ]},
-    { category: "プラチナカラー（最高位）", items: [
+    { category: "プラチナカラー", items: [
       { name: "全体染め", price: "¥8,900", note: "毛髪強化＋酸性キューティクルケア配合" },
       { name: "全体染め（期間限定）", price: "¥5,900", note: "現金払い不可" },
     ]},
     { category: "トリートメント", items: [
       { name: "スタンダードトリートメント", price: "¥1,200", note: "白髪染め施術のお客様用" },
       { name: "プロケアトリートメント", price: "¥1,700", note: "白髪染め施術のお客様用" },
-      { name: "クリニークストリートメント", price: "¥2,200〜", note: "髪質改善・期間限定" },
+      { name: "クリニークストリートメント", price: "¥2,200〜", note: "期間限定" },
     ]},
     { category: "シャンプーのみ", items: [
       { name: "シャンプー単品", price: "¥2,000", note: "ハイブリットシャンプー＋セルフブロー込" },
@@ -53,6 +62,7 @@ export default function MenuPage() {
   ];
   return (
     <div style={{ maxWidth:"800px", margin:"0 auto", padding:"3rem 1rem" }}>
+      <JsonLd data={breadcrumbJsonLd([{ name:"ホーム", path:"/" }, { name:"メニュー・料金", path:"/menu" }])} />
       <h1 style={{ fontFamily:"serif", fontSize:"1.8rem", color:"#111", marginBottom:"0.5rem", fontWeight:400 }}>メニュー・料金</h1>
       <p style={{ color:"#888", fontSize:"0.88rem", marginBottom:"0.75rem" }}>全メニュー税込。ハイブリットシャンプー＋セルフブロー込みの料金です。</p>
       <p style={{ color:"#888", fontSize:"0.82rem", marginBottom:"3rem" }}>※ロング料金あり。現金払い不可メニューあり。</p>
@@ -89,12 +99,13 @@ export default function MenuPage() {
       ))}
       <div style={{ background:"#f7f5f2", borderRadius:"8px", padding:"1.5rem", marginTop:"1rem", marginBottom:"3rem" }}>
         <p style={{ fontSize:"0.85rem", color:"#555", lineHeight:2 }}>
-          お支払い：カード（Visa / Master / JCB / AMEX他）・PayPay対応<br />
-          営業時間：10:00〜18:00（最終受付17:00）／ 定休日：不定休
+          お支払い：{SALON.payment}<br />
+          営業時間：{SALON.hours}／ 定休日：{SALON.holiday}<br />
+          所在地：{SALON.address}（{SALON.accessShort}）
         </p>
       </div>
       <div style={{ textAlign:"center" }}>
-        <a href="https://beauty.hotpepper.jp/slnH000501100/" target="_blank" rel="noopener"
+        <a href={SALON.hotpepper} target="_blank" rel="noopener"
           style={{ background:"#111", color:"#fff", padding:"16px 56px", fontSize:"0.82rem", letterSpacing:"0.2em", textDecoration:"none" }}>
           予　約
         </a>
