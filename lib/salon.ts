@@ -20,7 +20,7 @@ export const SALON = {
   opens: "10:00",
   closes: "18:00",
   holiday: "不定休",
-  payment: "クレジットカード・PayPay・現金（券売機）※一部メニューは現金不可",
+  payment: "現金・クレジットカード（VISA／Mastercard／JCB／AMEX／Diners／銀聯／Discover）・PayPay ※一部メニューは現金不可",
   priceRange: "¥1,900〜¥8,900",
   hotpepper: "https://beauty.hotpepper.jp/slnH000501100/",
   line: "https://line.me/R/ti/p/@545fncvi",
@@ -48,7 +48,7 @@ export function salonJsonLd() {
     url: SITE_URL,
     image: [`${SITE_URL}/images/salon-exterior.jpg`, `${SITE_URL}/images/salon-mirror.jpg`],
     priceRange: SALON.priceRange,
-    paymentAccepted: "Credit Card, PayPay, Cash",
+    paymentAccepted: "Cash, Credit Card, PayPay",
     address: {
       "@type": "PostalAddress",
       postalCode: SALON.postalCode,

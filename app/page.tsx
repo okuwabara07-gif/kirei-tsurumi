@@ -17,7 +17,7 @@ const features = [
 const menu = [
   { name: "オーガニックカラー リタッチ", price: "¥2,500", note: "根元から2cm以内" },
   { name: "オーガニックカラー 全体", price: "¥3,040〜", note: "毛先の長さにより変動" },
-  { name: "プレミアムカラー リタッチ", price: "¥4,800", note: "髪質改善ケア配合" },
+  { name: "プレミアムカラー 根元染め", price: "¥3,900〜", note: "髪質改善ケア付き ¥4,800" },
   { name: "トリートメント", price: "¥1,200〜", note: "カラーと同時施術" },
 ];
 export default function Home() {
@@ -198,24 +198,17 @@ export default function Home() {
       </section>
 
       <section style={{ background:"#f7f5f2", padding:"5rem 2rem" }}>
-        <div style={{ maxWidth:"1000px", margin:"0 auto" }}>
-          <p style={{ fontSize:"0.68rem", letterSpacing:"0.25em", color:"#888", marginBottom:"1rem", textAlign:"center" }}>— VOICE</p>
-          <h2 style={{ fontFamily:"serif", fontSize:"clamp(1.4rem,3vw,2rem)", color:"#111", textAlign:"center", marginBottom:"3rem", fontWeight:400 }}>お客様の声</h2>
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))", gap:"1.5rem" }}>
-            {[
-              { text:"40代です。白髪が気になっていましたが、オーガニックカラーで自然な仕上がりになりました。頭皮への刺激もなく安心です。", author:"40代女性・鶴見区在住" },
-              { text:"カラー後の髪のツヤが全然違います。オートシャンプーも気持ちよくて、毎回リラックスできます。", author:"50代女性・横浜市在住" },
-              { text:"白髪を染めるのが初めてで不安でしたが、丁寧にカウンセリングしていただけました。また来ます！", author:"40代女性・川崎市在住" },
-            ].map((v, i) => (
-              <div key={i} style={{ background:"#fff", padding:"2rem", borderTop:"2px solid #111" }}>
-                <p style={{ fontSize:"0.85rem", color:"#444", lineHeight:2, marginBottom:"1.5rem" }}>「{v.text}」</p>
-                <p style={{ fontSize:"0.75rem", color:"#aaa", letterSpacing:"0.05em" }}>— {v.author}</p>
-              </div>
-            ))}
-          </div>
-          <p style={{ textAlign:"center", fontSize:"0.75rem", color:"#bbb", marginTop:"2rem" }}>
-            ※ 掲載はお客様の許可をいただいております。
+        <div style={{ maxWidth:"720px", margin:"0 auto", textAlign:"center" }}>
+          <p style={{ fontSize:"0.68rem", letterSpacing:"0.25em", color:"#888", marginBottom:"1rem" }}>— VOICE</p>
+          <h2 style={{ fontFamily:"serif", fontSize:"clamp(1.4rem,3vw,2rem)", color:"#111", marginBottom:"1.5rem", fontWeight:400 }}>お客様の口コミ</h2>
+          <p style={{ fontSize:"0.88rem", color:"#555", lineHeight:2, marginBottom:"2rem" }}>
+            ご来店いただいたお客様の口コミは、ホットペッパービューティーに掲載しています。<br />
+            実際の仕上がりや接客の様子をご確認ください。
           </p>
+          <a href={`${SALON.hotpepper}review/`} target="_blank" rel="noopener noreferrer"
+            style={{ display:"inline-block", border:"1px solid #111", color:"#111", padding:"12px 36px", fontSize:"0.78rem", letterSpacing:"0.15em", textDecoration:"none" }}>
+            口コミを見る（ホットペッパービューティー）
+          </a>
         </div>
       </section>
       <section style={{ position:"relative", overflow:"hidden" }}>
