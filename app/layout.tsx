@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LineFloatingButton from "@/components/LineFloatingButton";
 import JsonLd from "@/components/JsonLd";
+import PageViewTracker from "@/components/PageViewTracker";
 import { SITE_URL, salonJsonLd } from "@/lib/salon";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <LineFloatingButton />
+        <PageViewTracker />
       </body>
     </html>
   );
